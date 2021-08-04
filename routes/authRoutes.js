@@ -17,7 +17,7 @@ const { requireAuth } = require('../app')
 // reCAPTCHA
 const recaptcha = new Recaptcha(process.env.SITE_KEY, process.env.SECRET_KEY, { callback: 'cb' })
 const captchaVerify = (req, res, next) => {
-    if (req.recaptcha.error) {
+    if (process.env.CAPTCHA_ENABLED == 'true' && req.recaptcha.error) {
         req.flash('error_msg', 'reCAPTCHA Incorrect!')
         res.redirect('back')
     } else {

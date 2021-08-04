@@ -19,8 +19,17 @@ mongoose.connect(process.env.MONGO_URI, {
     useUnifiedTopology: true,
     useCreateIndex: true
 })
-.then(() => console.log('MongoDB Connection Established'))
-.catch(error => console.error(error))
+.then(() => console.log('MongoDB Connection Established!'))
+.catch(error => console.error(`MongoDB could not be connected: ${error}`))
+
+// reCAPTCHA
+if (process.env.CAPTCHA_ENABLED == 'true') {
+    console.log('reCAPTCHA Enabled. Please ensure Site & Secret Keys are correct.')
+} else if (process.env.CAPTCHA_ENABLED == 'false') {
+    console.log('reCAPTCHA Disabled!')
+} else {
+    console.error('Please set CAPTCHA_ENABLED to either true or false!')
+}
 
 // Middleware - EJS
 app.set('view engine', 'ejs')
@@ -81,4 +90,4 @@ app.use(require('./routes/indexRoutes'))
 app.use(require('./routes/authRoutes'))
 
 // Listen on Port
-app.listen(process.env.PORT, console.log(`Server Running on Port ${process.env.PORT}`))
+app.listen(process.env.PORT, console.log(`Server Running on Port ${process.env.PORT}.`))

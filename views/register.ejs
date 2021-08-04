@@ -22,7 +22,9 @@
 <a href="/login">Login</a>
 
 <!--reCAPTCHA-->
-<%- captcha %>
+<% if (process.env.CAPTCHA_ENABLED == 'true') { %>
+    <%- captcha %>
+<% } %>
 <script>
     function cb(token) {
         var input = document.createElement('input')
