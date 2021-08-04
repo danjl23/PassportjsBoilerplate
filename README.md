@@ -11,6 +11,7 @@ An Express App which allows users to create accounts, and login with Passport.js
 - [ ] Account Activation **(working on it!)**
 - [ ] Change Account Details
 - [ ] CSRF Protection **(working on it!)**
+- [ ] Comprehensive Setup Tutorial **(working on it!)**
 
 ## Dependencies
 https://www.npmjs.com/package/express  
