@@ -169,7 +169,7 @@ router.post('/reset/:token', recaptcha.middleware.verify, captchaVerify, (req, r
                 }
                 // Field Validation
                 if(req.body.pass !== req.body.pass2) {
-                    req.flash('error_msg', 'Passwords do not match.')
+                    req.flash('error_msg', 'Passwords do not match!')
                     return res.redirect('back')
                 }
                 if(req.body.pass.length < 6) {
