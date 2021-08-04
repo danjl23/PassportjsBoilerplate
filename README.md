@@ -50,6 +50,7 @@ SMTP_PASS = 'yourpassword'
 SMTP_FROM = 'email@example.com'
 
 # reCAPTCHA (v2 Checkbox)
+CAPTCHA_ENABLED = true
 SITE_KEY = 'Get from https://www.google.com/recaptcha/admin'
 SECRET_KEY = 'Get from https://www.google.com/recaptcha/admin'
 ```  
